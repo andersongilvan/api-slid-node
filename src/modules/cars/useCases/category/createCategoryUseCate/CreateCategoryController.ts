@@ -13,7 +13,7 @@ export class CreateCategoryController {
             return response.status(201).json(result)
         } catch (error) {
             if (error instanceof Error) {
-                return response.status(400).json({ error: error.message })
+                return response.status(500).json({ error: error.message })
             }
 
             console.error(`Internal error: ${error}`);

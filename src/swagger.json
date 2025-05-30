@@ -1,0 +1,58 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Locar.dev Documentation",
+        "description": "Car rental api",
+        "version": "1.0.0",
+        "contact": {
+            "email": "torresdinho8@gmail.com",
+            "fone": "(81) 9 94184584"
+        }
+    },
+    "paths": {
+        "/categories": {
+            "post": {
+                "tags" : ["Category"],
+                "sumary": "Create a category",
+                "description": "Create a new category",
+                "requestBody": {
+                    "content": {
+                        "aplication/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    }
+                                },
+                                "exemple": {
+                                    "name": "category name sample",
+                                    "description": "category description name sample"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "content": {
+                            "aplication/json": {
+                                "example": {
+                                    "id": "01JWHCHAXH1TAX94ZVT006NRBV",
+                                    "name": "Category name sample",
+                                    "description": "Category description sample"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "This category already exist"
+                    }
+                }
+            }
+        }
+    }
+}
