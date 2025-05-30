@@ -15,3 +15,11 @@ model Category {
 
   @@map("tb_categories")
 }
+
+model Specification {
+  id          String @id @default(ulid())
+  name        String
+  description String
+
+  @@map("tb_specifications")
+}

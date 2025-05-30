@@ -126,6 +126,12 @@ exports.Prisma.CategoryScalarFieldEnum = {
   description: 'description'
 };
 
+exports.Prisma.SpecificationScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  description: 'description'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -138,7 +144,8 @@ exports.Prisma.QueryMode = {
 
 
 exports.Prisma.ModelName = {
-  Category: 'Category'
+  Category: 'Category',
+  Specification: 'Specification'
 };
 
 /**
