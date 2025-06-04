@@ -7,7 +7,7 @@ export class CategoryRepository extends PrismaClient implements ICategoryReposit
     constructor() {
         super()
     }
-
+    
     async create({ name, description }: CreateCategoryDto): Promise<Category> {
 
         const createCategory: Category = await this.category.create({ data: { name, description } })
@@ -15,6 +15,13 @@ export class CategoryRepository extends PrismaClient implements ICategoryReposit
         return createCategory
 
     }
+
+   async findAll(): Promise<Category[]> {
+
+        return await this.category.findMany()
+
+    }
+
     async findByName(name: string): Promise<Category | null> {
 
         return await this.category.findFirst({ where: { name } })
@@ -23,5 +30,4 @@ export class CategoryRepository extends PrismaClient implements ICategoryReposit
     findById(id: string): Promise<Category> {
         throw new Error("Method not implemented.");
     }
-
 }

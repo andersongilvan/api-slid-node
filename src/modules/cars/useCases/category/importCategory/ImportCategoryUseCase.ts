@@ -12,7 +12,7 @@ export class ImportCategoryUseCase {
     constructor(private categoryRepository: CategoryRepository) { }
 
 
-    async loadCategory(file: Express.Multer.File) : Promise<ICategory[]> {
+    async loadCategory(file: Express.Multer.File): Promise<ICategory[]> {
 
         const categories: ICategory[] = []
 
@@ -32,7 +32,7 @@ export class ImportCategoryUseCase {
 
     }
 
-    async execute(file: Express.Multer.File) : Promise<void> {
+    async execute(file: Express.Multer.File): Promise<void> {
 
         const categories = await this.loadCategory(file)
 

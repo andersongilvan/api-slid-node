@@ -4,6 +4,7 @@ import { CreateCategoryDto } from "../../DTO/category/CreateCategoryDto";
 
 export interface ICategoryRepository {
     create({ name, description }: CreateCategoryDto): Promise<Category>
+    findAll() : Promise<Category[]>
     findByName(name: string): Promise<Category | null>
     findById(id: string): Promise<Category>
 }

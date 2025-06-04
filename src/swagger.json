@@ -12,8 +12,10 @@
     "paths": {
         "/categories": {
             "post": {
-                "tags" : ["Category"],
-                "sumary": "Create a category",
+                "tags": [
+                    "Category"
+                ],
+                "sumary": "Create a Category",
                 "description": "Create a new category",
                 "requestBody": {
                     "content": {
@@ -50,6 +52,36 @@
                     },
                     "500": {
                         "description": "This category already exist"
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "Category"
+                ],
+                "sumary": "List all Categories",
+                "description": "List all Categories",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "aplication/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "description": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
